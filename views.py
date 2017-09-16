@@ -1,5 +1,5 @@
 from app import app
-from models import Users
+from models import User, Workout, Exercises, Exercise, Set
 from forms import LoginForm
 from flask import render_template
 
