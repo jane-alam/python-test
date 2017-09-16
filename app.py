@@ -1,8 +1,16 @@
-import os
-from app import create_app
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
-app = create_app()
+
+app = Flask(__name__)
+
+app.config.from_pyfile('config.py')
+
+db = SQLAlchemy(app)
+
+
+from views import *
+
 
 if __name__ == '__main__':
-   port = int(os.environ.get("PORT", 5000))
-   app.run(debug=True, port=port, use_reloader=True)
+    app.run()
